@@ -1,0 +1,26 @@
+.user .card {
+  background-color: white;
+}
+
+.table {
+  margin-bottom: 0%;
+}
+
+th,
+td {
+  padding-left: 1rem !important;
+}
+
+.user th,
+.user td:first-child {
+  width: 25%;
+}
+
+.user td:first-child {
+  text-align: end !important;
+}
+
+#roles td,
+#roles th {
+  text-align: start !important;
+}

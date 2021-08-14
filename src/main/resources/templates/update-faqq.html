@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Update Faqq</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container my-5">
+	<h3> Update Faqq</h3>
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-8">
+					<form action="#"
+						th:action="@{/students/update/{id}(id=${Faqq.id})}"
+						th:object="${faqq}" method="post">
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="question" class="col-form-label">question</label> <input
+									type="text" th:field="*{question}" class="form-control" id="question"
+									placeholder="question"> <span
+									th:if="${#fields.hasErrors('question')}" th:errors="*{question}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="answers" class="col-form-label">answers</label> <input
+									type="text" th:field="*{answers}" class="form-control" id="answers"
+									placeholder="answers"> <span
+									th:if="${#fields.hasErrors('answers')}" th:errors="*{answers}"
+									class="text-danger"></span>
+							</div>
+
+
+							<div class="form-group col-md-8">
+								<input type="submit" class="btn btn-primary"
+									value="Update Faqq">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
