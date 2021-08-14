@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<head lang="fr" xmlns:th="http://www.thymeleaf.org/">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="menu.css"/>
+    <link rel="stylesheet" href="footer.css"/>
+
+    <link rel="stylesheet" th:href="@{css/statistiques.css}">
+    <link rel="stylesheet" th:href="@{/css/all.css}">
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/bootstrap-slider.css}"/>
+    <title>Lab&Co</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div th:replace="fragment/menu :: navbar">
+
+    </div>
+        <div class="row">
+            <div class="col-12 px-1">
+                <div class="card statistiques">
+                    <div class="row px-3 py-2">
+                        <div class="col-12">
+                            Statistiques
+                        </div>
+                    </div>
+                    <hr class="m-0"/>
+                    <div class="row px-3 py-2">
+                        <div class="col-6">
+                            <div class="row">
+                                <label for="periode-du" class="col-12 col-form-label">Période du</label>
+                                <div class="col-12">
+                                    <input type="date" class="form-control" id="periode-du">
+                                </div>
+
+                                <label for="periode-au" class="col-12 col-form-label">Au</label>
+                                <div class="col-12">
+                                    <input type="date" class="form-control" id="periode-au">
+                                </div>
+
+                                <label for="type-demande" class="col-12 col-form-label">Type de demande</label>
+                                <div class="col-12">
+                                    <select class="form-select" id="type-demande">
+                                        <option value="1">??</option>
+                                        <option value="2">??</option>
+                                        <option value="3">??</option>
+                                    </select>
+                                </div>
+
+                                <label for="financeur" class="col-12 col-form-label">Financeur</label>
+                                <div class="col-12">
+                                    <select class="form-select" id="financeur">
+                                        <option value="1">??</option>
+                                        <option value="2">??</option>
+                                        <option value="3">??</option>
+                                    </select>
+                                </div>
+
+                                <label for="type-recrutement" class="col-12 col-form-label">Type de recrutement</label>
+                                <div class="col-12">
+                                    <select class="form-select" id="type-recrutement">
+                                        <option value="1">??</option>
+                                        <option value="2">??</option>
+                                        <option value="3">??</option>
+                                    </select>
+                                </div>
+
+                                <label for="porteur" class="col-12 col-form-label">Porteur</label>
+                                <div class="col-12">
+                                    <select class="form-select" id="porteur">
+                                        <option value="1">??</option>
+                                        <option value="2">??</option>
+                                        <option value="3">??</option>
+                                    </select>
+                                </div>
+
+                                <label for="structure" class="col-12 col-form-label">structure</label>
+                                <div class="col-12">
+                                    <select class="form-select" id="structure">
+                                        <option value="1">??</option>
+                                        <option value="2">??</option>
+                                        <option value="3">??</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-outline-primary col-12 m-3">Actualiser</button>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h1>Chiffres clefs pour la sélection</h1>
+                            <p>Total des demandes: 950</p>
+                            <ul class="list-unstyled p-3">
+                                <li>
+                                    <p>Dont en cours: 189</p>
+                                    <ul class="list-unstyled p-3">
+                                        <li>Dont en édition (après une demande de modificiation): 16</li>
+                                        <li>Dont en validation: 7</li>
+                                        <li>Dont en vérification DR&I: 54</li>
+                                        <li>Dont en instruction DR&I: 112</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p>Dont archivées: 761</p>
+                                    <ul class="list-unstyled p-3">
+                                        <li>Dont traitement finalisé par la DR&I: 591</li>
+                                        <li>Dont rejetées par la DR&I: 40</li>
+                                        <li>Dont abandonnées: 130</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row px-3 py-2">
+                        <div class="col-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Moyenne</th>
+                                        <th scope="col">Médiane</th>
+                                        <th scope="col">Ecart-type</th>
+                                        <th scope="col">Min</th>
+                                        <th scope="col">Max</th>
+                                        <th scope="col">Cumul</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="green-cell" colspan="7">Demandes de conventions de recherche (433)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="green-cell" colspan="7">Demandes RH (465)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="green-cell" colspan="7">Avenants conventions (47)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="green-cell" colspan="7">PI invention (2)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="green-cell">Durée de traitement (jours)</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                        <td>inp</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col px-1">
+                <!--FOOTER-->
+                  
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>

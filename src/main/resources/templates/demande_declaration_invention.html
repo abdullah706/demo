@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<head lang="fr" xmlns:th="http://www.thymeleaf.org/">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="menu.css"/>
+    <link rel="stylesheet" href="footer.css"/>
+
+    <link rel="stylesheet" th:href="@{css/demande_declaration_invention.css}">
+    <link rel="stylesheet" th:href="@{/css/all.css}">
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/bootstrap-slider.css}"/>
+    <title>Lab&Co</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div th:replace="fragment/menu :: navbar">
+
+    </div>
+        <div class="row">
+            <div class="col-12 px-1">
+                <div class="card declaration-invention">
+                    <div class="row px-3 py-2"> 
+                        <div class="col-12">
+                            Nouvelle demande de type: Déclaration d'invention / déclaration de travaux valorisables
+                        </div>
+                    </div>
+                    <hr class="m-0"/>
+                    <div class="row justify-content-center p-4">
+                        <p>NB: Les champs suivis d'un astérisque (*) sont obligatoires. 
+                            Vous pourrez néanmoins sauvegarder une demande incomplète et la compléter ultérieurement si vous le souhaitez.</p>
+                        
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Structure demandeuse</legend>  
+
+                            <div class="row mb-3 px-2">
+                                <label for="nom-structure" class="col-4 col-form-label">Nom de la structure demandeuse (*)</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="nom-structure">
+                                </div>
+                            </div>
+                            
+                        </fieldset>
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Porteur de projet</legend>                          
+                            
+                            <div class="row mb-3 px-2">
+                                <label for="porteur-projet" class="col-4 col-form-label">Porteur du projet (*)</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="porteur-projet">
+                                    <p><em>Il s'agit de préférence d'un personnel permanent de Sorbonne Université qui 
+                                        sera l’interlocuteur privilégié de Sorbonne Université et de la SATT LUTECH, 
+                                        le cas échéant.</em></p>
+                                </div>
+                            </div>
+                            
+                        </fieldset>
+                        
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Description technique</legend>                          
+                            
+                            <div class="row mb-3 px-2">
+                                <label for="titre-invention" class="col-4 col-form-label">Titre de l'invention (*)</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="titre-invention">
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3 px-2">
+                                <p class="col-12"><em>En quoi l’invention se distingue-t-elle de l’existant ?</em></p>
+                            </div>
+
+                            <div class="row mb-3 px-2">
+                                <label for="elements-avantages" class="col-4 col-form-label">A. Eléments distincts et avantages (*)</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="elements-avantages">
+                                </div>
+                            </div>
+
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">B. Avez-vous connaissance de publications proches de l'invention?  (*)</legend>
+                                <div class="col-1 form-check ps-5">
+                                    <input class="form-check-input" type="radio" name="publication" id="publication-oui">
+                                    <label class="form-check-label" for="publication-oui">Oui</label>
+                                </div>
+                                <div class="col-7 form-check">
+                                    <input class="form-check-input" type="radio" name="publication" id="publication-non">
+                                    <label class="form-check-label" for="publication-non">Non</label>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">C. Une recherche dans les bases de données brevets a-t-elle été effectuée* ?   (*)</legend>
+                                <div class="col-1 form-check ps-5">
+                                    <input class="form-check-input" type="radio" name="recherche-bdd" id="recherche-bdd-oui">
+                                    <label class="form-check-label" for="recherche-bdd-oui">Oui</label>
+                                </div>
+                                <div class="col-7 form-check">
+                                    <input class="form-check-input" type="radio" name="recherche-bdd" id="recherche-bdd-non">
+                                    <label class="form-check-label" for="recherche-bdd-non">Non</label>
+                                </div>
+                            </fieldset>
+                            
+                            <div class="row mb-3 px-2">
+                                <label for="invention-differe" class="col-4 col-form-label">Précisez en quoi votre invention diffère des documents cités (*)</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="invention-differe">
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3 px-2">
+                                <label for="limites" class="col-4 col-form-label">Quelles sont pour vous les limites de mise en œuvre de l’invention et comment peuvent-elles être surmontées?  (*)</label>
+                                <div class="col-8">
+                                    <textarea class="form-control" id="limites" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 px-2">
+                                <label for="applications" class="col-4 col-form-label">Quelles applications potentielles de l’invention avez-vous identifiées (forces/faiblesses)?  (*)</label>
+                                <div class="col-8">
+                                    <textarea class="form-control" id="applications" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 px-2">
+                                <label for="next-steps" class="col-4 col-form-label">Quelles sont pour vous les prochaines étapes pour les développer et les valider?  (*)</label>
+                                <div class="col-8">
+                                    <textarea class="form-control" id="next-steps" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">Avez-vous déjà déposé une déclaration d’invention dans le domaine de l’invention ou un domaine proche?  (*)</legend>
+                                <div class="col-1 form-check ps-5">
+                                    <input class="form-check-input" type="radio" name="declaration-invention" id="declaration-invention-oui">
+                                    <label class="form-check-label" for="declaration-invention-oui">Oui</label>
+                                </div>
+                                <div class="col-7 form-check">
+                                    <input class="form-check-input" type="radio" name="declaration-invention" id="declaration-invention-non">
+                                    <label class="form-check-label" for="declaration-invention-non">Non</label>
+                                </div>
+                            </fieldset>
+                            
+                        </fieldset>
+
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Divulgation</legend>                          
+                            
+                            <div class="row mb-3 px-2">
+                                <p class="col-12">Toute divulgation des résultats valorisables avant 
+                                    protection affecte le caractère de « nouveauté » critère indispensable.
+                                </p>
+                            </div>
+
+                            <div class="row mb-3 px-2">
+                                <p class="col-12">Divulgation orale ou écrite de l’invention (par exemple : 
+                                    discussions avec des tiers couvertes ou non par un accord de confidentialité, 
+                                    publication, abstract, poster ou présentation orale en congrès, séminaire, 
+                                    soutenances de thèse/Master/concours/HDR sans huis clos, rapport d’activité, 
+                                    dépôt d’une séquence dans une banque de données…
+                                </p>
+                            </div>
+
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">Dans le passé : l’invention a-t-elle déjà fait l’objet d’une divulgation par l’équipe de recherche ou un tiers ? y compris lors de discussions informelles avec des tiers sans accord de confidentialité* ?  (*)</legend>
+                                <div class="col-1 form-check ps-5">
+                                    <input class="form-check-input" type="radio" name="divulgation-passe" id="divulgation-passe-oui">
+                                    <label class="form-check-label" for="divulgation-passe-oui">Oui</label>
+                                </div>
+                                <div class="col-7 form-check">
+                                    <input class="form-check-input" type="radio" name="divulgation-passe" id="divulgation-passe-non">
+                                    <label class="form-check-label" for="divulgation-passe-non">Non</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">Dans le futur : l’invention doit-elle faire prochainement l’objet d’une divulgation écrite ou orale?  (*)</legend>
+                                <div class="col-1 form-check ps-5">
+                                    <input class="form-check-input" type="radio" name="divulgation-futur" id="divulgation-futur-oui">
+                                    <label class="form-check-label" for="divulgation-futur-oui">Oui</label>
+                                </div>
+                                <div class="col-7 form-check">
+                                    <input class="form-check-input" type="radio" name="divulgation-futur" id="divulgation-futur-non">
+                                    <label class="form-check-label" for="divulgation-futur-non">Non</label>
+                                </div>
+                            </fieldset>
+
+                        </fieldset>
+
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Cadre contractuel et financement</legend>                          
+                            
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">Avez-vous utilisé pour vos recherches du matériel (matériel biologique, logiciel…) obtenu auprès de sociétés ou d’autres équipes de recherche?  (*)</legend>
+                                <div class="col-1 form-check ps-5">
+                                    <input class="form-check-input" type="radio" name="materiel-obtention" id="materiel-obtention-oui">
+                                    <label class="form-check-label" for="materiel-obtention-oui">Oui</label>
+                                </div>
+                                <div class="col-7 form-check">
+                                    <input class="form-check-input" type="radio" name="materiel-obtention" id="materiel-obtention-non">
+                                    <label class="form-check-label" for="materiel-obtention-non">Non</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">Les travaux de recherche à l’origine de l’invention ont-ils été conduits dans le cadre de contrat ou partenariat de recherche ?  (*)</legend>
+                                
+                                <div class="col-8">
+                                    <div class="row">
+                                        <div class="col-1 form-check ps-5">
+                                            <input class="form-check-input" type="radio" name="contrat-partenariat" id="contrat-partenariat-oui">
+                                            <label class="form-check-label" for="contrat-partenariat-oui">Oui</label>
+                                        </div>
+                                        <div class="col-11 form-check" id="special-non">
+                                            <input class="form-check-input" type="radio" name="contrat-partenariat" id="contrat-partenariat-non">
+                                            <label class="form-check-label" for="contrat-partenariat-non">Non</label>
+                                        </div>
+                                        <p class="col-12"><em>Par exemple financement Sorbonne Université et/ou CNRS, partenariat académique, 
+                                            contrat de recherche avec un partenaire privé, sponsoring, CIFRE, ANR, contrat européen, 
+                                            financement industriel, ministère, régional, OSEO, association, fondation, chaire…</em>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                            </fieldset>
+                            
+                        </fieldset>
+
+                        
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Valorisation de l'invention</legend>                          
+                            
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">Connaissez-vous des partenaires intéressés ou susceptibles d’être intéressés pour exploiter l’invention?   (*)</legend>
+                                <div class="col-1 form-check ps-5">
+                                    <input class="form-check-input" type="radio" name="partenaire-exploitant" id="partenaire-exploitant-oui">
+                                    <label class="form-check-label" for="partenaire-exploitant-oui">Oui</label>
+                                </div>
+                                <div class="col-7 form-check">
+                                    <input class="form-check-input" type="radio" name="partenaire-exploitant" id="partenaire-exploitant-non">
+                                    <label class="form-check-label" for="partenaire-exploitant-non">Non</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">Avez-vous déjà contacté certaines entreprises?   (*)</legend>
+                                <div class="col-1 form-check ps-5">
+                                    <input class="form-check-input" type="radio" name="contact-entreprise" id="contact-entreprise-oui">
+                                    <label class="form-check-label" for="contact-entreprise-oui">Oui</label>
+                                </div>
+                                <div class="col-7 form-check">
+                                    <input class="form-check-input" type="radio" name="contact-entreprise" id="contact-entreprise-non">
+                                    <label class="form-check-label" for="contact-entreprise-non">Non</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="row mb-3 px-2 radio-fieldset">
+                                <legend class="col-4">Envisagez-vous de valoriser votre invention à travers la création d’entreprise?  (*)</legend>
+                                <div class="col-1 form-check ps-5">
+                                    <input class="form-check-input" type="radio" name="creation-entreprise" id="creation-entreprise-oui">
+                                    <label class="form-check-label" for="creation-entreprise-oui">Oui</label>
+                                </div>
+                                <div class="col-7 form-check">
+                                    <input class="form-check-input" type="radio" name="creation-entreprise" id="creation-entreprise-non">
+                                    <label class="form-check-label" for="creation-entreprise-non">Non</label>
+                                </div>
+                            </fieldset>
+                        </fieldset>
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Engagement de l'interlocuteur privilégié de l'invention</legend>                          
+                            
+                            <div class="row mb-3 px-2">
+
+                                <label class="form-check-label col-4 col-form-label" for="engagement">
+                                    En tant que porteur du projet, je reconnais accepter d’être l'interlocuteur 
+                                    privilégié de l'invention auprès de Sorbonne Université, et de la SATT LUTECH 
+                                    le cas échéant, au nom de l’ensemble des contributeurs, et confirme la validité 
+                                    des renseignements indiqués dans cette déclaration d'invention.  (*)
+                                </label>
+                                <div class="col-8">
+                                    <input class="form-check-input" type="checkbox" value="" id="engagement">
+                                </div>
+                            </div>
+                            
+                        </fieldset>
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Pièces à joindre</legend>                          
+                            
+                            <div class="row mb-3 px-2">
+                                <p class="col-12">
+                                    Ce formulaire doit être accompagné de la « fiche individuelle de contributeur », 
+                                    remplie par chaque contributeur et de la « fiche de résumé de déclaration d'invention », 
+                                    chiffrée avec le logiciel Zed !.
+                                </p>
+                            </div>
+                            
+
+                            <div class="row mb-3 px-2">
+                                <p class="col-12">
+                                    <a href="#">Téléchargez la fiche</a>, remplissez-là et 
+                                    envoyez-là à chaque contributeur afin qu'il la remplisse aussi et la signe.
+                                </p>
+                            </div>
+
+                            <div class="row mb-3 px-2">
+                                <p class="col-12">
+                                    <a href="#">Téléchargez la fiche de résumé de déclaration d'invention.</a>
+                                </p>
+                            </div>
+
+                            <div class="row mb-3 px-2">
+                                <p class="col-12">
+                                    Une fois que vous enregistré le formulaire, 
+                                    utilisez l'onglet Pièces à joindre pour accompagner votre demande des documents suivants :
+                                </p>
+                                <ul class="col-12">
+                                    <li>une fiche individuelle de contributeur par contributeur</li>
+                                    <li>la fiche résumé de déclaration d’invention chiffrée avec le logiciel Zed !.</li>
+                                </ul>
+                            </div>
+
+                            <div class="row mb-3 px-2">
+                                <p class="col-12">
+                                    et si nécessaire :
+                                </p>
+                                <ul class="col-12">
+                                    <li>la (les) publication(s) proche(s) de l'invention</li>
+                                    <li>le(s) document(s) relatif(s) au(x) divulgation(s) antérieure(s) ou future(s)</li>
+                                    <li>l'accord de transfert de matériel (MTA) utilisé pour les travaux</li>
+                                    <li>l'accord de secret avec une entreprise</li>
+                                </ul>
+                            </div>
+                        </fieldset>
+
+
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                <a href="#" class="btn btn-primary mt-3">Créer la demande</a>
+                                <a href="#" class="btn btn-outline-danger mt-3">Annuler</a>
+                            </div>
+                            
+                        </div>
+                        
+                                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col px-1">
+                <!--FOOTER-->                
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>

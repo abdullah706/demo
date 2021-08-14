@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<head lang="fr" xmlns:th="http://www.thymeleaf.org/">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="footer.css"/>
+    <link rel="stylesheet" href="menu.css"/>
+    <link rel="stylesheet" href="footer.css"/>
+
+    <link rel="stylesheet" th:href="@{css/devis_rh.css}">
+    <link rel="stylesheet" th:href="@{/css/all.css}">
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/bootstrap-slider.css}"/>
+
+    <title>Lab&Co</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div th:replace="fragment/menu :: navbar">
+
+    </div>>
+
+        <div class="row">
+            <div class="col-12 px-1">
+                <div class="card devis-rh">
+                    <div class="row px-3 py-2"> 
+                        <div class="col-12">
+                            Calculette RH
+                        </div>
+                    </div>
+                    <hr class="m-0"/>
+                    <div class="row justify-content-center p-4">
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Nature et type de la demande</legend>                          
+                            <div class="row mb-3 px-2">
+                                <label for="nature-recrutement" class="col-4 col-form-label">Nature du recrutement (*)</label>
+                                <div class="col-8">
+                                    <select class="form-select" id="nature-recrutement">
+                                        <option value="1">CDD</option>
+                                        <option value="2">Contrat doctoral</option>
+                                        <option value="3">Bourse Marie Curie</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Le type de demande dépend de la nature du recrutement-->
+                            <div class="row mb-3 px-2">
+                                <label for="type-demande" class="col-4 col-form-label">Type de demande (*)</label>
+                                <div class="col-8">
+                                    <select class="form-select" id="type-demande">
+                                        <option value="1">Valeur 1</option>
+                                        <option value="2">Valeur 2</option>
+                                        <option value="3">Valeur 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Candidat</legend>
+                            <!-- Expérience pro apparait seulement si CDD dans la nature du recrutement-->
+                            <div class="row mb-3 px-2">
+                                <label for="experience-pro" class="col-4 col-form-label">Experience Professionnelle (*)</label>
+                                <div class="col-8">
+                                    <select class="form-select" id="experience-pro">
+                                        <option value="1">Pour un post-doctorant : doctorat</option>
+                                        <option value="2">Pour un post-doctorant : doctorat + 2 ans</option>
+                                        <option value="3">Pour un post-doctorant : doctorat + 3 ans</option>
+                                        <option value="4">Pour un ingénieur, technicien ou administratif</option>
+                                        <option value="5">Pour un chercheur</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3 px-2">
+                                <label for="experience-pro-autre" class="col-4 col-form-label">Nombre d'année d'expériences (*)</label>
+                                <div class="col-8">
+                                    <input type="number" class="form-control" id="experience-pro-autre">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Poste à pourvoir</legend>
+                            <div class="row mb-3 px-2">
+                                <label for="equivalent-grade" class="col-4 col-form-label">Equivalent corps/grade fonction publique</label>
+                                <div class="col-8">
+                                    <select class="form-select" id="equivalent-grade">
+                                        <option value="1">Chercheur</option>
+                                        <option value="2">Post-doctorant</option>
+                                        <option value="3">IGR</option>
+                                        <option value="4">IGE</option>
+                                        <option value="5">ASI</option>
+                                        <option value="6">Technicien classe supérieure</option>
+                                        <option value="7">Technicien classe normale</option>
+                                        <option value="8">Adjoint technique</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3 px-2">
+                                <label for="localisation" class="col-4 col-form-label">Localisation (*)</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="localisation">
+                                </div>
+                            </div>
+                            <div class="row mb-3 px-2">
+                                <label for="quotite-travail" class="col-4 col-form-label">Quotité de travail (*)</label>
+                                <div class="col-8">
+                                    <select class="form-select" id="quotite-travail">
+                                        <option value="100">100%</option>
+                                        <option value="90">90%</option>
+                                        <option value="80">80%</option>
+                                        <option value="70">70%</option>
+                                        <option value="60">60%</option>
+                                        <option value="50">50%</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Date du contrat</legend>
+                            <div class="row mb-3 px-2">
+                                <label for="date-debut" class="col-4 col-form-label">Date de début (*)</label>
+                                <div class="col-8">
+                                    <input type="date" class="form-control" id="date-debut">
+                                </div>
+                            </div>
+                            <div class="row mb-3 px-2">
+                                <label for="date-fin" class="col-4 col-form-label">Date de fin (*)</label>
+                                <div class="col-8">
+                                    <input type="date" class="form-control" id="date-fin">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="border p-2">
+                            <legend class="w-auto">Rémunération</legend>
+                            <div class="row mb-3 px-2">
+                                <label for="salaire-indicatif" class="col-4 col-form-label">Montant indicatif du salaire brut mensuel (en Euros)</label>
+                                <div class="col-8">
+                                    <input type="number" class="form-control" id="salaire-indicatif" disabled> 
+                                </div>
+                            </div>
+                            <div class="row mb-3 px-2">
+                                <label for="salaire" class="col-4 col-form-label">Montant du salaire brut mensuel (en Euros) (*)</label>
+                                <div class="col-8">
+                                    <input type="number" class="form-control" id="salaire">
+                                </div>
+                            </div>
+                            <div class="row mb-3 px-2">
+                                    <fieldset class="row radio-fieldset">
+                                        <legend class="col-4">Indemnité de transport en commun</legend>
+                                        <div class="col-1 form-check ps-5">
+                                            <input class="form-check-input" type="radio" name="transport" id="oui">
+                                            <label class="form-check-label" for="oui">Oui</label>
+                                        </div>
+                                        <div class="col-7 form-check">
+                                            <input class="form-check-input" type="radio" name="transport" id="non">
+                                            <label class="form-check-label" for="non">Non</label>
+                                        </div>
+                                    </fieldset>                   
+                            </div>
+                            <div class="row mb-3 px-2">
+                                <label for="nb-enfant" class="col-4 col-form-label">Nombre d'enfants à charge</label>
+                                <div class="col-8">
+                                    <input type="number" class="form-control" id="nb-enfant">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        
+                        
+                        <button type="submit" class="btn btn-outline-primary mt-3">Lancer le calcul</button>
+                        
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col px-1">
+                <!--FOOTER-->                
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>

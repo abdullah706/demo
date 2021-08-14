@@ -1,0 +1,22 @@
+legend {
+  float: none;
+  padding: inherit;
+}
+
+.radio-fieldset {
+  align-items: center;
+}
+
+.radio-fieldset > legend {
+  float: left;
+  font-size: medium;
+}
+
+#special-non {
+  left: 2.5rem;
+  position: relative;
+}
+
+li {
+  margin-left: 3rem;
+}

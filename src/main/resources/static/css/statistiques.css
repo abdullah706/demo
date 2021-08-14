@@ -1,0 +1,17 @@
+.statistiques label {
+  font-weight: bold;
+}
+
+.statistiques button[type="submit"] {
+  width: max-content;
+}
+
+.green-cell {
+  background-color: rgb(39, 150, 39) !important;
+  color: white;
+}
+
+.statistiques th,
+.statistiques td:not(:first-child) {
+  text-align: end !important;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head lang="fr" xmlns:th="http://www.thymeleaf.org/">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="footer.css"/>
+    <link rel="stylesheet" href="all.css"/>
+    <link rel="stylesheet" th:href="@{css/demande_onglets.css}">
+    <link rel="stylesheet" th:href="@{/css/all.css}">
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/bootstrap-slider.css}"/>
+    <title>Lab&Co</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div th:replace="fragment/menu :: navbar">
+
+    </div>
+        <div class="row">
+            <div class="col-12 px-1">
+                <div class="card onglets">
+                    <ul class="nav nav-tabs px-3 pt-3" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="details-demande-tab" data-bs-toggle="tab" data-bs-target="#details-demande" type="button" role="tab" aria-controls="details-demande" aria-selected="true">Détails de la demande</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="feuille-cout-tab" data-bs-toggle="tab" data-bs-target="#feuille-cout" type="button" role="tab" aria-controls="feuille-cout" aria-selected="false">Feuille de coût</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="piece-jointe-tab" data-bs-toggle="tab" data-bs-target="#piece-jointe" type="button" role="tab" aria-controls="piece-jointe" aria-selected="false">Pièces à joindre</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="documents-gen-tab" data-bs-toggle="tab" data-bs-target="#documents-gen" type="button" role="tab" aria-controls="documents-gen" aria-selected="false">Documents générés</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="historique-tab" data-bs-toggle="tab" data-bs-target="#historique" type="button" role="tab" aria-controls="historique" aria-selected="false">Historique</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="debug-tab" data-bs-toggle="tab" data-bs-target="#debug" type="button" role="tab" aria-controls="debug" aria-selected="false">Debug</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content p-3" id="myTabContent">
+                        <div class="tab-pane fade show active" id="details-demande" role="tabpanel" aria-labelledby="details-demande-tab">
+                            DETAILS DEMANDE
+                        </div>
+                        <div class="tab-pane fade" id="feuille-cout" role="tabpanel" aria-labelledby="feuille-cout-tab">
+                            <button class="btn btn-primary">Editer la feuille de coût</button>
+                        </div>
+                        <div class="tab-pane fade" id="piece-jointe" role="tabpanel" aria-labelledby="piece-jointe-tab">
+                            <p>Vous pouvez (et, probablement, devez) joindre à ce formulaire des documents complémentaires: canevas d'appel à projets, annexe scientifique, annexe financière...</p>
+                            <h1>Pièces-jointes actuelles</h1>
+                            <ul class="list-unstyled ps-5">
+                                <li>
+                                    <div class="d-flex align-items-center my-3">
+                                        <button class="btn btn-danger mx-2">Delete</button>
+                                        <p class="m-0">
+                                            <a href="#">LABENCO.png</a> Déposée par: <a href="#">Benoit Perthame</a>. Le 10 avril 2020 à 12:18:56
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-center my-3">
+                                        <button class="btn btn-danger mx-2">Delete</button>
+                                        <p class="m-0">
+                                            <a href="#">FORMAT_A.png</a> Déposée par: <a href="#">Benoit Perthame</a>. Le 10 avril 2020 à 12:19:11
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <h1 class="my-4">Ajouter une ou des pièces-jointes</h1>
+
+
+                            <input class="form-control" type="file" id="formFileMultiple" multiple>
+
+                            <button class="btn btn-primary my-3">Téléverser</button>
+                        </div>
+                        <div class="tab-pane fade" id="documents-gen" role="tabpanel" aria-labelledby="documents-gen-tab">
+                            <h1>Documents générés</h1>
+
+                            <ul class="list-unstyled">
+                                <li class="py-2"><a href="#">Feuille de coût.pdf, 2020-04-10T09:53:04,473028</a></li>
+                                <li class="py-2"><a href="#">Feuille de coût.pdf, 2020-04-10T09:57:33,980350</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="historique" role="tabpanel" aria-labelledby="historique-tab">
+                            <h1>Etat actuel</h1>
+
+                            <p>Etat de workflow actuel: <strong>En cours de validation</strong> (workflow en cours)</p>
+                            <p>Prochaine action: <strong>Demande à considérer pour validation</strong> (workflow en cours)</p>
+                            <p>Nombre de jours de retard dans le traitement: <strong>269</strong></p>
+
+                            <h1>Historique des actions</h1>
+
+                            <ul>
+                                <li>
+                                    <p>08 Oct 2020 16:32:53: <a href="#">François Gilbert</a> a pris la main sur la demande</p>
+                                    <p class="comment-control">Erreur de saisie dans "structures concernées"</p>
+                                </li>
+                                <li>
+                                    <p>07 Oct 2020 14:09:54: <a href="#">Cynthia Lapert</a> a pris la main sur la demande</p>
+                                    <p class="comment-control">Bonjour, je prends la main sur la demande car il ne faut pas ajouter l'ED dans "structures concernées".
+                                        Bon apres-midi, Cynthia.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>29 Sept 2020 10:51:41: Demande validée par un responsable (<a href="#">Marie-Christine Jaulent</a>)</p>
+                                </li>
+                                <li>
+                                    <p>29 Sept 2020 05:07:10: Demande validée par un responsable (<a href="#">Dominique Belle</a>)</p>
+                                </li>
+                                <li>
+                                    <p>29 Sept 2020 15:42:09: <a href="#">Jean Charlet</a> a soumis sa demande pour validation hiérarchique</p>
+                                </li>
+                            </ul>
+
+                            <h1>Historique des versions</h1>
+
+                            <h2>Version courante</h2>
+
+                            <p>Version: <strong>5</strong>, sauvegardée le .</p>
+
+                            <h2>Version antérieurs</h2>
+
+                            <ul>
+                                <li>Version: <strong>0</strong>, sauvegardée le 25 septembre 2020 à 12:30:16</li>
+                                <li>Version: <strong>1</strong>, sauvegardée le 25 septembre 2020 à 12:33:14</li>
+                                <li>Version: <strong>3</strong>, sauvegardée le 25 septembre 2020 à 12:51:41</li>
+                                <li>Version: <strong>4</strong>, sauvegardée le 25 septembre 2020 à 1:10:36</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col px-1">
+                <!--FOOTER-->
+                  
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
